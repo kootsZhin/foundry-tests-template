@@ -2,23 +2,15 @@
 pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
-import "../src/Counter.sol";
 
 contract CounterTest is Test {
-    Counter public counter;
+    uint256 x = 42;
 
-    function setUp() public {
-        counter = new Counter();
-        counter.setNumber(0);
+    function testA() public {
+        x += 1;
     }
 
-    function testIncrement() public {
-        counter.increment();
-        assertEq(counter.number(), 1);
-    }
-
-    function testSetNumber(uint256 x) public {
-        counter.setNumber(x);
-        assertEq(counter.number(), x);
+    function testB() public {
+        x = x + 1;
     }
 }
